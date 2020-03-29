@@ -8,6 +8,7 @@
 <script>
 import CalendarWeek from './components/CalendarWeek.vue';
 import CalendarEntry from './components/CalendarEntry.vue';
+import BrawlerSheet from './components/BrawlerSheet';
 
 export default {
   name: 'App',
