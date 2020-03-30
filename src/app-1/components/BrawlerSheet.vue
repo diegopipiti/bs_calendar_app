@@ -2,7 +2,7 @@
     <div id='brawler-sheet' style="display: flex; width: 100%">
         <figure class="media-left">
             <img class="image is-64x64 image is-64x92"
-            src='./assets/images/submissions/Bo.png'>
+            src="require('./assets/images/submissions/Bo.png')">
         </figure>
         <div class="media-content">
             <div class="content">
