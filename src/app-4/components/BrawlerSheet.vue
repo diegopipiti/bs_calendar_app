@@ -2,25 +2,25 @@
     <div id='brawler-sheet' style="display: flex; width: 100%">
         <figure class="media-left">
             <img class="image is-64x64 image is-64x92"
-            src="https://i.ibb.co/khCkQDG/Bo.png">
+            :src="brawler.brawlerImage">
         </figure>
         <div class="media-content">
             <div class="content">
                 <p>
                     <strong>
-                        <a href="https://brawlstars.fandom.com/wiki/Bo" class="has-text-info">Bo</a>
-                        <a v-if="'Bo'!== 'Bo'" v-bind:href="brawler.url" class="has-text-info" ><font color="red">Bo</font></a>
+                        <a :href="brawler.url" class="has-text-info">{{brawler.nome}}</a>
+                        <a v-if="brawler.nomeIta !== brawler.nomeEng" v-bind:href="brawler.url" class="has-text-info" ><font color="red">{{brawler.nomeEng}}</font></a>
                         <span class="tag is-small">#3</span>
                     </strong>
                     <br>
-                        Bo ha una salute abbastanza alta e spara frecce esplosive che infliggono danni moderati a lunga distanza.
+                        {{brawler.descrizione}}
                     <br>
-                        <p class="lista-piccola"><span class="red-text">Punti vita: </span>4680</p>
-                        <p class="lista-piccola"><span class="red-text">Attacco</span>: 676</p>
+                        <p class="lista-piccola"><span class="red-text">Punti vita: </span>{{brawler.puntiVita}}</p>
+                        <p class="lista-piccola"><span class="red-text">Attacco:</span> {{brawler.attacco}}</p>
                     <small class="is-size-7">
                         Submitted by:
                         <img class="image is-24x24"
-                        src="https://i.ibb.co/s22zdm7/BoAvatar.png">
+                        :src="brawler.avatar">
                     </small>
                 </p>
             </div>
@@ -37,7 +37,8 @@
 
 <script>
 export default {
-    name: 'BrawlerSheet'
+    name: 'BrawlerSheet',
+    props: ['brawler']
 }
 </script>
 

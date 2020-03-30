@@ -2,18 +2,21 @@
   <div id="app">
     <CalendarWeek />
     <CalendarEntry />
+    <ListaBrawler />
   </div>
 </template>
 
 <script>
 import CalendarWeek from './components/CalendarWeek.vue';
 import CalendarEntry from './components/CalendarEntry.vue';
+import BrawlerSheet from "./components/ListaBrawler.vue";
 
 export default {
   name: 'App',
   components: {
     CalendarWeek,
-    CalendarEntry
+    CalendarEntry,
+    ListaBrawler
   }
 }
 </script>
