@@ -17,7 +17,7 @@
 
 <script>
     import { store } from "../store.js";
-    import BrawlerSheet from "./BrawlerSheet.Vue";
+    import BrawlerSheet from "@BrawlerSheet.Vue";
 
     export default{
         name: 'ListaBrawler',
