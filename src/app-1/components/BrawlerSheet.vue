@@ -2,7 +2,7 @@
     <div id='brawler-sheet' style="display: flex; width: 100%">
         <figure class="media-left">
             <img class="image is-64x64 image is-64x92"
-            src="C:\Users\burat\OneDrive\Desktop\Source\JavaScript\bs_calendar_app\public\images\submissions\Bo.png">
+            src='./assets/images/submissions/Bo.png'>
         </figure>
         <div class="media-content">
             <div class="content">
@@ -19,8 +19,8 @@
                         <p class="lista-piccola"><span class="red-text">Attacco</span>: 676</p>
                     <small class="is-size-7">
                         Submitted by:
-                        <img class="image is-24x24"
-                        src="C:\Users\burat\OneDrive\Desktop\Source\JavaScript\bs_calendar_app\public\images\avatar\Bo.png">
+                        <!-- <img class="image is-24x24"
+                        src=".assets/images/avatar/Bo.png"> -->
                     </small>
                 </p>
             </div>
@@ -40,3 +40,27 @@ export default {
     name: 'BrawlerSheet'
 }
 </script>
+
+<style lang="css" scoped>
+#brawler-sheet {
+  background: #FFF;
+  border: 1px solid #42b883;
+  border-radius: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.red-text{
+  color: red;
+  font-weight: 800; 
+}
+
+.w-text{
+  color: white;
+}
+
+.lista-piccola{
+  font-size: 0.7em;
+}
+
+</style>

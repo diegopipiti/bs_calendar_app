@@ -2,6 +2,7 @@
   <div id="app">
     <CalendarWeek />
     <CalendarEntry />
+    <BrawlerSheet />
   </div>
 </template>
 
@@ -14,7 +15,8 @@ export default {
   name: 'App',
   components: {
     CalendarWeek,
-    CalendarEntry
+    CalendarEntry,
+    BrawlerSheet
   }
 }
 </script>
