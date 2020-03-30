@@ -5,11 +5,11 @@
                 v-bind:key="brawler.id"
                 v-bind:class="{ 'blue-border': brawler.trofei >= 20 }">
                 
-                <brawlerSheet
+                <BrawlerSheet
                 v-bind:brawler="brawler"
                 
                 >
-                </brawlerSheet>
+                </BrawlerSheet>
                 <!-- sopra manca  v-bind:brawlers="sortedBrawlers"-->
             </article>
         </div>
@@ -17,7 +17,7 @@
 
 <script>
     import { store } from "../store.js";
-    import BrawlerSheet from "@BrawlerSheet.Vue";
+    import BrawlerSheet from '../components/BrawlerSheet.vue';
 
     export default{
         name: 'ListaBrawler',

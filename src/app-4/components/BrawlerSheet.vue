@@ -10,7 +10,7 @@
                     <strong>
                         <a :href="brawler.url" class="has-text-info">{{brawler.nome}}</a>
                         <a v-if="brawler.nomeIta !== brawler.nomeEng" v-bind:href="brawler.url" class="has-text-info" ><font color="red">{{brawler.nomeEng}}</font></a>
-                        <span class="tag is-small">#3</span>
+                        <span class="tag is-small">#{{brawler.id}}</span>
                     </strong>
                     <br>
                         {{brawler.descrizione}}
