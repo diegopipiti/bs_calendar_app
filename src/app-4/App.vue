@@ -1,5 +1,5 @@
 <template>
-  <div >
+  <div id="app">
     <CalendarWeek />
     <CalendarEntry />
     <ListaBrawler />
@@ -29,9 +29,9 @@ html, body {
 
 <style lang="scss" scoped>
 #app {
-  height: inherit;
+  //height: inherit;
   background: #6e6e6e;
-  display: flex;
+  //display: flex;
   flex-direction: column;
   align-items: center;
   -webkit-align-items: center;

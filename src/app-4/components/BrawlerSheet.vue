@@ -28,7 +28,7 @@
         <div class="media-right">
             <span class="icon is-small" v-on:click="upVote(3)">
                 <i class="fa fa-chevron-up"></i>
-                <strong class="has-text-info">15</strong>
+                <strong class="has-text-info">{{brawler.trofei}}</strong>
             </span>
         </div>
     </div>
