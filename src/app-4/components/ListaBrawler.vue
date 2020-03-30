@@ -1,6 +1,6 @@
 <template>
     <div class="section">
-            <article class="media sfondoW" 
+            <article class="media noBorder" 
                 v-for="brawler in sharedState.brawlersData" 
                 v-bind:key="brawler.id"
                 v-bind:class="{ 'blue-border': brawler.trofei >= 20 }">
@@ -63,6 +63,10 @@
   border-radius: 20px;
   width: 64px;
   height: auto;
+}
+
+.noBorder{
+  border: none;
 }
 
 </style>
