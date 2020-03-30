@@ -75,6 +75,7 @@ export const brawlersData = [
       attacco:416,
       avatar: 'https://i.ibb.co/J5mVm7G/Rico-Avatar.png',
       brawlerImage: 'https://i.ibb.co/VjGQ1MK/Rico.png',
+      active: true
   },
   {
       id: 2,
@@ -87,6 +88,7 @@ export const brawlersData = [
       attacco:598,
       avatar: 'https://i.ibb.co/vzGXs7V/Rosa-Avatar.png',
       brawlerImage: 'https://i.ibb.co/FYWFG4z/Rosa.png',
+      active: false,
   },
   {
       id: 3,
@@ -99,6 +101,7 @@ export const brawlersData = [
       attacco:676,
       avatar: 'https://i.ibb.co/s22zdm7/BoAvatar.png',
       brawlerImage: 'https://i.ibb.co/khCkQDG/Bo.png',
+      active: false,
   },
   {
       id: 4,
@@ -111,6 +114,7 @@ export const brawlersData = [
       attacco:1092,
       avatar: 'https://i.ibb.co/nsmfrVG/Jessie-Avatar.png',
       brawlerImage: 'https://i.ibb.co/4dd6B56/Jessie.png',
+      active: false,
   },
   {
       id: 5,
@@ -123,6 +127,7 @@ export const brawlersData = [
       attacco:1170,
       avatar: 'https://i.ibb.co/h7SHwh0/Penny-Avatar.png',
       brawlerImage: 'https://i.ibb.co/8d7ghbw/Penny.png',
+      active: false,
   },
   {
       id: 6,
@@ -135,6 +140,7 @@ export const brawlersData = [
       attacco:416,
       avatar: 'https://i.ibb.co/Kj2YDkQ/Colt-Avatar.png',
       brawlerImage: 'https://i.ibb.co/LgBHjVb/Colt.png',
+      active: false,
   },
   {
       id: 7,
@@ -147,6 +153,7 @@ export const brawlersData = [
       attacco:  1560,
       avatar: 'https://i.ibb.co/j5mnSPv/Jacky-Avatar.png',
       brawlerImage: 'https://i.ibb.co/WV0XmNF/Jacky.png',
+      active: false,
   },
   
 ];
