@@ -1,5 +1,8 @@
 <template>
   <div id="calendar-entry">
+    <p style="color: red; font-size: 13px" v-if="error">
+      You must type something first!
+    </p>
     <div class="calendar-entry-note">
       <label style="color: red; font-weight: bold"> 
         Trofei: 
@@ -9,10 +12,10 @@
 
         /> 
       </label>
-      <p class="calendar-entry-day">
+      <p class="calendar-entry-day testoCent">
         Brawler: <span class="bold">{{ titleOfActiveBrawler }}</span>
       </p>
-      <a class="button is-primary is-small is-outlined"
+      <a class="button is-primary is-small is-outlined submit centrato30"
         @click="submitTrofei(inputEntry)">
         Submit
         </a>
@@ -27,7 +30,8 @@ export default {
   name: 'TrofeiEntry',
   data(){
     return{
-      inputEntry: null
+      inputEntry: null,
+      error: false
     }
   },
   computed: {
@@ -40,8 +44,12 @@ export default {
   },
   methods: {
     submitTrofei(numeroTrofei) {
+      if(numeroTrofei === null)
+        return this.error = true;
+
       store.submitTrofei(numeroTrofei);
       this.inputEntry = null;
+      this.error = false;
       
     }
   }
@@ -89,4 +97,13 @@ export default {
     }
   }
 }
+
+.testoCent{
+  text-align: center;
+}
+
+.centrato30{
+  width: 30%;
+}
+
 </style>
