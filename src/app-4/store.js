@@ -13,5 +13,20 @@ export const store = {
     this.state.seedData.map((dayObj) => {
       dayObj.id === dayId ? dayObj.active = true : dayObj.active = false;
     });
+  },
+  
+  //Metodi dei brawler
+  getActiveBrawler(){
+    return this.state.brawlersData.find((brawler) => brawler.active);
+  },
+  setActiveBrawler(brawlerId){
+    this.state.brawlersData.map((brawlerObj) => {
+      brawlerObj.id === brawlerId ? brawlerObj.active = true : brawlerObj.active = false;
+    });
+  },
+  submitTrofei(nuoviTrofei){
+    const activeBrawler = this.getActiveBrawler();
+
+    activeBrawler.trofei = nuoviTrofei;
   }
 }

@@ -1,5 +1,5 @@
 <template>
-    <div id='brawler-sheet' style="display: flex; width: 100%">
+    <div id='brawler-sheet' style="display: flex; width: 100%" @click="setActiveBrawler(brawler.id)">
         <figure class="media-left">
             <img class="image is-64x64 image is-64x92"
             :src="brawler.brawlerImage">
@@ -8,7 +8,7 @@
             <div class="content">
                 <p>
                     <strong>
-                        <a :href="brawler.url" class="has-text-info">{{brawler.nome}}</a>
+                        <a :href="brawler.url" class="has-text-info">{{brawler.nomeIta}}</a> &nbsp
                         <a v-if="brawler.nomeIta !== brawler.nomeEng" v-bind:href="brawler.url" class="has-text-info" ><font color="red">{{brawler.nomeEng}}</font></a>
                         <span class="tag is-small">#{{brawler.id}}</span>
                     </strong>
@@ -36,9 +36,17 @@
 
 
 <script>
+
+import { store } from '../store.js';
+
 export default {
     name: 'BrawlerSheet',
-    props: ['brawler']
+    props: ['brawler'],
+    methods: {
+        setActiveBrawler(brawlerId) {
+            store.setActiveBrawler(brawlerId);
+        }
+    }
 }
 </script>
 

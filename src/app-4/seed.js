@@ -145,7 +145,7 @@ export const brawlersData = [
   {
       id: 7,
       nomeEng: 'Jacky',
-      nomeIta: 'Colt',
+      nomeIta: 'Jacky',
       descrizione: 'Quando attacca, salta sul suo martello pneumatico come una pogo stick e infligge ingenti danni ad area. Jacky ha anche una buona salute, rendendola in grado di resistere a molti danni.',
       url: 'https://brawlstars.fandom.com/wiki/Jacky',
       trofei: 55,
