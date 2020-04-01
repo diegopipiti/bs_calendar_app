@@ -33,22 +33,22 @@
             <div class="content">
                 <p>
                     <strong>
-                        ITA: <input class="has-text-info" type = "text" :value="brawler.nomeIta"/> &nbsp
-                        ENG: <input class="has-text-info" type = "text" :value="brawler.nomeEng"/>
+                        ITA: <input class="has-text-info" type = "text" :placeholder="brawler.nomeIta" v-model="nuovoBrawler.nomeIta"/> &nbsp
+                        ENG: <input class="has-text-info" type = "text" :placeholder="brawler.nomeEng"/>
                         <span class="tag is-small">#{{brawler.id}}</span>
                     </strong>
                     <br>
-                        <textarea class="has-text-info col10" type = "text" :value="brawler.descrizione">
+                        <textarea class="has-text-info col10" type = "text" :placeholder="brawler.descrizione">
                         </textarea>
                     <br>
                         <p class="lista-piccola"><span class="red-text">Punti vita: </span>
-                            <input class="has-text-info" type = "text" :value="brawler.puntiVita"/>
+                            <input class="has-text-info" type = "text" :placeholder="brawler.puntiVita"/>
                         </p>
                         <p class="lista-piccola"><span class="red-text">Attacco:</span> 
-                            <input class="has-text-info" type = "text" :value="brawler.attacco"/>
+                            <input class="has-text-info" type = "text" :placeholder="brawler.attacco"/>
                         </p>
                         <p class="lista-piccola"><span class="red-text">Trofei:</span> 
-                            <input class="has-text-info" type = "text" :value="brawler.trofei"/>
+                            <input class="has-text-info" type = "text" :placeholder="brawler.trofei"/>
                         </p>
                     <small class="is-size-7">
                         Submitted by:
@@ -78,12 +78,28 @@ import { store } from '../store.js';
 export default {
     name: 'BrawlerSheet',
     props: ['brawler'],
+    data() {
+        return {
+            nuovoBrawler : {
+                nomeEng: '',
+                nomeIta: '',
+                descrizione: '',
+                trofei: null,
+                puntiVita: null,
+                attacco:null
+            }
+        }
+    },
     methods: {
         setActiveBrawler(brawlerId) {
             store.setActiveBrawler(brawlerId);
         },
         editBrawler(brawlerId){
             store.editBrawler(brawlerId);
+        },
+        updateBrawler(brawlerId, nuovoBrawler) {
+            store.updateBrawler(brawlerId, nuovoBrawler);
+            this.nuovoBrawler.nomeIta = '';
         }
     }
 }
