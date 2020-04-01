@@ -28,5 +28,9 @@ export const store = {
     const activeBrawler = this.getActiveBrawler();
 
     activeBrawler.trofei = nuoviTrofei;
+  },
+  editBrawler(brawlerId){
+    const brawlerObj = this.state.brawlersData.find(brawler => brawler.id === brawlerId);
+    brawlerObj.edit = true;
   }
 }
