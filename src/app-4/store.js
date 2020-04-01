@@ -32,5 +32,8 @@ export const store = {
   editBrawler(brawlerId){
     const brawlerObj = this.state.brawlersData.find(brawler => brawler.id === brawlerId);
     brawlerObj.edit = true;
+  },
+  resetEditOfAllBrawler(){
+    this.state.brawlersData.map(brawlerObj => brawlerObj.edit = false);
   }
 }

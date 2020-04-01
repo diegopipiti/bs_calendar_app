@@ -160,7 +160,7 @@ export const brawlersData = [
       avatar: 'https://i.ibb.co/j5mnSPv/Jacky-Avatar.png',
       brawlerImage: 'https://i.ibb.co/WV0XmNF/Jacky.png',
       active: false,
-      edit: true,
+      edit: false,
   },
   
 ];

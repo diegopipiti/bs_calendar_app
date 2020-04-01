@@ -59,9 +59,12 @@
             </div>
         </div>
         <div class="media-right">
-            <div><strong class="has-text-info" v-if="!brawler.edit">{{brawler.trofei}}</strong></div>
-            <div class="icon is-small" v-on:click="editBrawler(brawler.id)">
+            <div v-if="!brawler.edit" class="icon is-small" v-on:click="editBrawler(brawler.id)">
+                <div><strong class="has-text-info">{{brawler.trofei}}</strong></div>
                 <i class="fa fa-pencil-square edit-icon"></i>
+            </div>
+            <div v-if="brawler.edit" class="icon is-small" >
+                <i class="fa fa-check"></i>
             </div>
         </div>
     </div>
