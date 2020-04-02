@@ -3,6 +3,8 @@
         class="input is-small" 
         type="text"
         :placeholder = "placeholder"
+        v-model="input"
+        @key.enter = "monitorEnterKey"
     />
 </template>
 
@@ -14,9 +16,15 @@
         
         data() {
             return {
-
+                input: ''
             }
         },
+
+        methods:{
+            monitorEnterKey() {
+                
+            }
+        }
         
     }
 </script>
