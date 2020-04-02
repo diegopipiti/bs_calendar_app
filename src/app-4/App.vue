@@ -2,6 +2,7 @@
   <div id="app">
     <ListaBrawler />
     <TrofeiEntry />
+    <ListaCommenti />
   </div>
 </template>
 
@@ -10,6 +11,7 @@ import CalendarWeek from './components/CalendarWeek.vue';
 import CalendarEntry from './components/CalendarEntry.vue';
 import ListaBrawler from "./components/ListaBrawler.vue";
 import TrofeiEntry from "./components/TrofeiEntry.vue";
+import ListaCommenti from "./components/ListaCommenti.vue";
 
 export default {
   name: 'App',
@@ -17,7 +19,8 @@ export default {
     CalendarWeek,
     CalendarEntry,
     ListaBrawler,
-    TrofeiEntry
+    TrofeiEntry,
+    ListaCommenti
   }
 }
 </script>
