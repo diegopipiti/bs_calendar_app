@@ -1,7 +1,5 @@
 <template>
   <div id="app">
-    <CalendarWeek />
-    <CalendarEntry />
     <ListaBrawler />
     <TrofeiEntry />
   </div>
