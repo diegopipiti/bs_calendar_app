@@ -34,21 +34,21 @@
                 <p>
                     <strong>
                         ITA: <input class="has-text-info" type = "text" :placeholder="brawler.nomeIta" v-model="nuovoBrawler.nomeIta"/> &nbsp
-                        ENG: <input class="has-text-info" type = "text" :placeholder="brawler.nomeEng"/>
+                        ENG: <input class="has-text-info" type = "text" :placeholder="brawler.nomeEng" v-model="nuovoBrawler.nomeEng"/>
                         <span class="tag is-small">#{{brawler.id}}</span>
                     </strong>
                     <br>
-                        <textarea class="has-text-info col10" type = "text" :placeholder="brawler.descrizione">
+                        <textarea class="has-text-info col10" type = "text" :placeholder="brawler.descrizione" v-model="nuovoBrawler.descrizione">
                         </textarea>
                     <br>
                         <p class="lista-piccola"><span class="red-text">Punti vita: </span>
-                            <input class="has-text-info" type = "text" :placeholder="brawler.puntiVita"/>
+                            <input class="has-text-info" type = "number" :placeholder="brawler.puntiVita" v-model="nuovoBrawler.puntiVita"/>
                         </p>
                         <p class="lista-piccola"><span class="red-text">Attacco:</span> 
-                            <input class="has-text-info" type = "text" :placeholder="brawler.attacco"/>
+                            <input class="has-text-info" type = "number" :placeholder="brawler.attacco" v-model="nuovoBrawler.attacco"/>
                         </p>
                         <p class="lista-piccola"><span class="red-text">Trofei:</span> 
-                            <input class="has-text-info" type = "text" :placeholder="brawler.trofei"/>
+                            <input class="has-text-info" type = "number" :placeholder="brawler.trofei" v-model="nuovoBrawler.trofei"/>
                         </p>
                     <small class="is-size-7">
                         Submitted by:
@@ -63,7 +63,7 @@
                 <div><strong class="has-text-info">{{brawler.trofei}}</strong></div>
                 <i class="fa fa-pencil-square edit-icon"></i>
             </div>
-            <div v-if="brawler.edit" class="icon is-small" >
+            <div v-if="brawler.edit" class="icon is-small" v-on:click="updateBrawler(brawler.id, nuovoBrawler)">
                 <i class="fa fa-check"></i>
             </div>
         </div>
@@ -98,8 +98,32 @@ export default {
             store.editBrawler(brawlerId);
         },
         updateBrawler(brawlerId, nuovoBrawler) {
+            
+            //controlla se i campi siano riempiti
+            this.nuovoBrawler.nomeIta = this.checkEmpty(this.nuovoBrawler.nomeIta, this.brawler.nomeIta);
+            this.nuovoBrawler.nomeEng = this.checkEmpty(this.nuovoBrawler.nomeEng, this.brawler.nomeEng);
+            this.nuovoBrawler.descrizione = this.checkEmpty(this.nuovoBrawler.descrizione, this.brawler.descrizione);
+            this.nuovoBrawler.trofei = this.checkEmpty(this.nuovoBrawler.trofei, this.brawler.trofei);
+            this.nuovoBrawler.attacco = this.checkEmpty(this.nuovoBrawler.attacco, this.brawler.attacco);
+            this.nuovoBrawler.puntiVita = this.checkEmpty(this.nuovoBrawler.puntiVita, this.brawler.puntiVita);
+            
+            //Aggiorna chiamando il metodo dentro lo store
             store.updateBrawler(brawlerId, nuovoBrawler);
+            
+            //reimposta le variabili allo stato originale
             this.nuovoBrawler.nomeIta = '';
+            this.nuovoBrawler.nomeEng = '';
+            this.nuovoBrawler.descrizione = '';
+            this.nuovoBrawler.trofei = null;
+            this.nuovoBrawler.attacco = null;
+            this.nuovoBrawler.puntiVita = null;
+        },
+        checkEmpty(nuovoDato, vecchioDato){
+            if(!nuovoDato)
+                {nuovoDato = vecchioDato;}
+            
+            return nuovoDato;
+
         }
     }
 }
