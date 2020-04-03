@@ -22,9 +22,12 @@
 
         methods:{
             monitorEnterKey() {
-                
+                this.$emit('add-note', {
+                    note: this.input,
+                    timestamp: new Date().toLocaleString()
+                });
+                this.input = '';
             }
         }
-        
     }
 </script>

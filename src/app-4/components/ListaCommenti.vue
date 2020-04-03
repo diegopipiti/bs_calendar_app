@@ -16,7 +16,10 @@
           </div>
         </div>
       </div>
-        <InputCommenti :placeholder="placeholder"></InputCommenti>
+        <InputCommenti 
+        :placeholder="placeholder"
+        @add-note = "addNote">
+        </InputCommenti>
     </div>
 </template>
 
@@ -33,6 +36,13 @@
                 timestamps: [],
                 placeholder: 'Enter a note'
             }
+        },
+
+        methods:{
+          addNote(event){
+            this.notes.push(event.note);
+            this.timestamps.push(event.timestamp);
+          }
         },
 
         components: {
