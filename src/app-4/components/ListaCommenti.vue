@@ -4,7 +4,7 @@
       <div class="columns">
         <div class="column has-text-centered">
           <strong>Notes</strong>
-          <div v-for="note in notes" class="notes">
+          <div v-for="note in notes" class="nota">
             {{ note }}
           </div>
         </div>
@@ -53,5 +53,10 @@
 
 
 <style>
+.nota{
+  color: #454141;
+  background: blanchedalmond;
+  
+}
 
 </style>

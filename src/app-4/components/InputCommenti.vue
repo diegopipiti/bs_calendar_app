@@ -4,7 +4,7 @@
         type="text"
         :placeholder = "placeholder"
         v-model="input"
-        @key.enter = "monitorEnterKey"
+        @keyup.enter = "monitorEnterKey"
     />
 </template>
 
