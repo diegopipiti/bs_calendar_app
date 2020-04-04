@@ -10,6 +10,8 @@
 
 
 <script>
+import EventBus from '../components/EventBus.js';
+
     export default{
         name: 'InputCommenti',
         props: ['placeholder'],
@@ -22,7 +24,7 @@
 
         methods:{
             monitorEnterKey() {
-                this.$emit('add-note', {
+                EventBus.$emit('add-note', {
                     note: this.input,
                     timestamp: new Date().toLocaleString()
                 });

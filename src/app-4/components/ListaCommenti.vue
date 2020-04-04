@@ -17,15 +17,19 @@
         </div>
       </div>
         <InputCommenti 
-        :placeholder="placeholder"
-        @add-note = "addNote">
+        :placeholder="placeholder">
         </InputCommenti>
+
+        <NoteCount> </NoteCount>
+
     </div>
 </template>
 
 
 <script>
     import InputCommenti from '../components/InputCommenti.vue';
+    import NoteCount from '../components/NoteCount.vue';
+    import EventBus from '../components/EventBus.js';
     
     export default{
         name: 'ListaCommenti',
@@ -45,8 +49,13 @@
           }
         },
 
+        created() {
+          EventBus.$on('add-note', event => this.addNote(event));
+        },
+
         components: {
             InputCommenti,
+            NoteCount
         }
     }
 </script>
