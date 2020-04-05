@@ -8,14 +8,25 @@ export const store = {
   },
 
   mutations: {
-    ADD_NOTES (){
-
+    ADD_NOTES (state, payload){
+      var newNote = payload;
+      state.notes.push(newNote); 
     },
 
-    ADD_TIMESTAMP(){
-      
+    ADD_TIMESTAMP(state, payload){
+      var newTimeStamp = payload;
+      state.timestamps.push(newTimeStamp);
     }
 
+  },
+
+  actions: {
+    addnote(context, payload) {
+
+    },
+    addTimeStamp(context, payload) {
+
+    }
   },
 
   getActiveDay () {
