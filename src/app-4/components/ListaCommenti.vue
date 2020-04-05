@@ -16,11 +16,12 @@
           </div>
         </div>
       </div>
-        <InputCommenti 
-        :placeholder="placeholder">
-        </InputCommenti>
+      
+      <InputCommenti 
+      :placeholder="placeholder">
+      </InputCommenti>
 
-        <NoteCount> </NoteCount>
+      <NoteCount> </NoteCount>
 
     </div>
 </template>
@@ -28,7 +29,7 @@
 
 <script>
     import InputCommenti from '../components/InputCommenti.vue';
-    import NoteCount from '../components/NoteCount.vue';
+    import NoteCount from "../components/NoteCount.vue";
     import EventBus from '../components/EventBus.js';
     
     export default{

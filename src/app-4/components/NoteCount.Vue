@@ -1,23 +1,25 @@
 <template>
-  <div class="note-count">
-      Note count: <strong>{{ noteCount }}</strong>
-</div>
+    <div class="note-count">
+        Note count: <strong>{{ contaNote }}</strong>
+    </div>
 </template>
 
 <script>
-import EventBus from '../components/EventBus.js';
+    import EventBus from '../components/EventBus.js';
 
-export default {
-    name: "NoteCount",
-    
-    data() {
-        noteCount: 0
-    },
+    export default{
+        name: "NoteCount",
+        
+        data() {
+            return{
+                contaNote: 0
+            }
+        },
 
-    created{
-        EventBus.$on('add-note', event => this.noteCount++);
+        created() {
+           EventBus.$on('add-note', event => this.contaNote++);
+        }
     }
-}
 </script>
 
 <style>
