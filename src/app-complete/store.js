@@ -2,8 +2,22 @@ import { seedData } from './seed.js';
 
 export const store = {
   state: {
-    seedData 
+    seedData,
+    notes: [],
+    timestamps: []
   },
+
+  mutations: {
+    ADD_NOTES (){
+
+    },
+
+    ADD_TIMESTAMP(){
+      
+    }
+
+  },
+
   getActiveDay () {
     return this.state.seedData.find((day) => day.active);
   },
