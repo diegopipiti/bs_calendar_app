@@ -1,19 +1,23 @@
 <template>
   <div id="app">
-    <CalendarWeek />
-    <CalendarEntry />
+    <ListaSnipers />
+    <TrofeiEntry />
+    <ListaCommenti />
   </div>
 </template>
 
 <script>
-import CalendarWeek from './components/CalendarWeek.vue';
-import CalendarEntry from './components/CalendarEntry.vue';
+
+import ListaSnipers from "./components/ListaSnipers.vue";
+import TrofeiEntry from "./components/TrofeiEntry.vue";
+import ListaCommenti from "./components/ListaCommenti.vue";
 
 export default {
   name: 'App',
   components: {
-    CalendarWeek,
-    CalendarEntry
+    ListaSnipers,
+    TrofeiEntry,
+    ListaCommenti
   }
 }
 </script>
@@ -26,9 +30,9 @@ html, body {
 
 <style lang="scss" scoped>
 #app {
-  height: inherit;
+  //height: inherit;
   background: #6e6e6e;
-  display: flex;
+  //display: flex;
   flex-direction: column;
   align-items: center;
   -webkit-align-items: center;

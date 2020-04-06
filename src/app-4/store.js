@@ -1,18 +1,10 @@
-import { seedData } from './seed.js';
 import { brawlersData } from './seed.js';
+import { snipersData } from './seed.js';
 
 export const store = {
   state: {
-    seedData,
-    brawlersData 
-  },
-  getActiveDay () {
-    return this.state.seedData.find((day) => day.active);
-  },
-  setActiveDay (dayId) {
-    this.state.seedData.map((dayObj) => {
-      dayObj.id === dayId ? dayObj.active = true : dayObj.active = false;
-    });
+    brawlersData,
+    snipersData
   },
   
   //Metodi dei brawler
@@ -46,5 +38,41 @@ export const store = {
     brawlerObj.attacco = nuovoBrawler.attacco;
     brawlerObj.puntiVita = nuovoBrawler.puntiVita;
     brawlerObj.edit = false;
+  },
+
+
+  //Metodi degli Snipers
+  getActiveSniper(){
+    return this.state.snipersData.find((sniper) => sniper.active);
+  },
+  setActiveSniper(sniperId){
+    this.state.snipersData.map((sniperObj) => {
+      sniperObj.id === sniperId ? sniperObj.active = true : sniperObj.active = false;
+    });
+  },
+  submitTrofei(nuoviTrofei){
+    const activeSniper = this.getActiveSniper();
+
+    activeSniper.trofei = nuoviTrofei;
+  },
+  editSniper(sniperId){
+    this.resetEditOfAllSnipers();
+    const sniperObj = this.state.snipersData.find(sniper => sniper.id === sniperId);
+    sniperObj.edit = true;
+  },
+  resetEditOfAllSnipers(){
+    this.state.snipersData.map(sniperObj => sniperObj.edit = false);
+  },
+  updateSniper(sniperId, nuovoSniper){
+    const sniperObj = this.state.snipersData.find(sniper => sniper.id === sniperId);
+    sniperObj.nome = nuovoSniper.nome;
+    sniperObj.soprannome = nuovoSniper.soprannome;
+    sniperObj.descrizione = nuovoSniper.descrizione;
+    sniperObj.trofei = nuovoSniper.trofei;
+    sniperObj.kill = nuovoSniper.kill;
+    sniperObj.posizioni = nuovoSniper.posizioni;
+    sniperObj.edit = false;
   }
 }
+
+  
