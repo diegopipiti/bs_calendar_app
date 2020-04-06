@@ -15,15 +15,16 @@
                         <span class="tag is-small">#{{sniper.id}}</span>
                     </strong>
                     <br>
-                        {{sniper.descrizione}}
+                        <p class="blockquote">{{sniper.descrizione}}</p>
                     <br>
                         <p class="lista-piccola"><span class="red-text">Trofei: </span>{{sniper.trofei}}</p>
-                        <p class="lista-piccola"><span class="red-text">Kill:</span> {{sniper.kill}}</p>
-                    <small class="is-size-7">
-                        Submitted by:
-                        <img class="image is-24x24"
-                        :src="sniper.avatar">
-                    </small>
+                        <p class="lista-piccola"><span class="blue-text">Kill:</span> {{sniper.kill}}</p>
+                        <p class="lista-piccola"><span class="red-text">Partite:</span> {{sniper.partite}}</p>
+                        <p class="lista-piccola"><span class="blue-text">Danni:</span> {{sniper.danni}}</p>
+                        <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{(sniper.trofei / sniper.partite).toFixed(1)}}</p>
+                        <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{(sniper.kill / sniper.partite).toFixed(1)}}</p>
+                        <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{(sniper.danni / sniper.partite).toFixed(1)}}</p>
+                        <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{(sniper.posizioni / sniper.partite).toFixed(1)}}</p>
                 </p>
             </div>
         </div>
@@ -34,7 +35,7 @@
                 <p>
                     <strong>
                         Nome: <input class="has-text-info" type = "text" :placeholder="sniper.nome" v-model="nuovoSniper.nome"/> &nbsp
-                        ENG: <input class="has-text-info" type = "text" :placeholder="sniper.soprannome" v-model="nuovoSniper.soprannome"/>
+                        SOPRANNOME: <input class="has-text-info" type = "text" :placeholder="sniper.soprannome" v-model="nuovoSniper.soprannome"/>
                         <span class="tag is-small">#{{sniper.id}}</span>
                     </strong>
                     <br>
@@ -50,11 +51,6 @@
                         <p class="lista-piccola"><span class="red-text">Posizioni:</span> 
                             <input class="has-text-info" type = "number" :placeholder="sniper.posizioni" v-model="nuovoSniper.posizioni"/>
                         </p>
-                    <small class="is-size-7">
-                        Submitted by:
-                        <img class="image is-24x24"
-                        :src="sniper.avatar">
-                    </small>
                 </p>
             </div>
         </div>
@@ -125,7 +121,10 @@ export default {
             return nuovoDato;
 
         }
-    }
+    },
+
+
+
 }
 </script>
 
@@ -143,6 +142,11 @@ export default {
   font-weight: 800; 
 }
 
+.blue-text{
+  color: blue;
+  font-weight: 800; 
+}
+
 .w-text{
   color: white;
 }
@@ -155,7 +159,7 @@ export default {
   position: relative;
   top: 5px;
   border-radius: 20px;
-  width: 64px;
+  width: 85px;
   height: auto;
 }
 
@@ -163,6 +167,17 @@ export default {
     margin-top: 5px;
     width: 408px;
     height: 60px;
+}
+
+.blockquote {
+margin: 0;
+background: #3c296b;
+color: white;
+padding: 30px;
+position: relative;
+text-align: center;
+text-transform: uppercase;
+font-family: 'Lato', sans-serif;
 }
 
 </style>

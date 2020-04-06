@@ -13,7 +13,7 @@
         /> 
       </label>
       <p class="calendar-entry-day testoCent">
-        Brawler: <span class="bold">{{ titleOfActiveBrawler }}</span>
+        Sniper: <span class="bold">{{ titleOfActiveSniper }}</span>
       </p>
       <a class="button is-primary is-small is-outlined submit centrato30"
         @click="submitTrofei(inputEntry)">

@@ -72,6 +72,11 @@ export const store = {
     sniperObj.kill = nuovoSniper.kill;
     sniperObj.posizioni = nuovoSniper.posizioni;
     sniperObj.edit = false;
+  },
+
+  trofei_partita(sniperId){
+    const sniperObj = this.state.snipersData.find(sniper => sniper.id === sniperId);
+    return sniperObj.trofei/sniperObj.partite;
   }
 }
 

@@ -5,11 +5,11 @@
                 v-bind:key="sniper.id"
                 v-bind:class="{ 'blue-border': sniper.trofei >= 20 }">
                 
-                <BrawlerSheet
-                v-bind:brawler="brawler"
+                <SniperSheet
+                v-bind:sniper="sniper"
                 
                 >
-                </BrawlerSheet>
+                </SniperSheet>
                 <!-- sopra manca  v-bind:brawlers="sortedBrawlers"-->
             </article>
         </div>
