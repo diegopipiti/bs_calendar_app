@@ -17,14 +17,18 @@
                     <br>
                         <p class="blockquote">{{sniper.descrizione}}</p>
                     <br>
-                        <p class="lista-piccola"><span class="red-text">Trofei: </span>{{sniper.trofei}}</p>
-                        <p class="lista-piccola"><span class="blue-text">Kill:</span> {{sniper.kill}}</p>
-                        <p class="lista-piccola"><span class="red-text">Partite:</span> {{sniper.partite}}</p>
-                        <p class="lista-piccola"><span class="blue-text">Danni:</span> {{sniper.danni}}</p>
-                        <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{(sniper.trofei / sniper.partite).toFixed(1)}}</p>
-                        <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{(sniper.kill / sniper.partite).toFixed(1)}}</p>
-                        <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{(sniper.danni / sniper.partite).toFixed(1)}}</p>
-                        <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{(sniper.posizioni / sniper.partite).toFixed(1)}}</p>
+                        <div class="sinisto" > 
+                            <p class="lista-piccola"><span class="red-text">Trofei: </span>{{sniper.trofei}}</p>
+                            <p class="lista-piccola"><span class="blue-text">Kill:</span> {{sniper.kill}}</p>
+                            <p class="lista-piccola"><span class="red-text">Partite:</span> {{sniper.partite}}</p>
+                            <p class="lista-piccola"><span class="blue-text">Danni:</span> {{sniper.danni}}</p>
+                        </div>
+                        <div class= "destro" >
+                            <p class="lista-piccola"><span class="red-text">Trofei per partita:</span> {{(sniper.trofei / sniper.partite).toFixed(1)}}</p>
+                            <p class="lista-piccola"><span class="blue-text">Kill per partita:</span> {{(sniper.kill / sniper.partite).toFixed(1)}}</p>
+                            <p class="lista-piccola"><span class="red-text">Danni per partita:</span> {{(sniper.danni / sniper.partite).toFixed(1)}}</p>
+                            <p class="lista-piccola"><span class="blue-text">Posizione media:</span> {{(sniper.posizioni / sniper.partite).toFixed(1)}}</p>
+                        </div>
                 </p>
             </div>
         </div>
@@ -178,6 +182,16 @@ position: relative;
 text-align: center;
 text-transform: uppercase;
 font-family: 'Lato', sans-serif;
+}
+
+.sinistro{
+    float: left;
+    width: 50%;
+}
+
+.destro{
+    float: right;
+    width: 50%;
 }
 
 </style>
